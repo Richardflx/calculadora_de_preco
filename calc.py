@@ -35,9 +35,9 @@ def CalculaTroco(compra, pagamento):  # Função para calcular o troco
         print(int(nota10),'Nota(as) de R$ 10,00')
         print(int(nota5),'Nota(as) de R$ 5,00')
         print(int(nota2),'Nota(as) de R$ 2,00')
-        print(int(moeda1),'Nota(as) de R$ 1,00')
-        print(int(moeda050),'Nota(as) de R$ 0,50')
-        print(int(moeda005),'Nota(as) de R$ 0,05')
+        print(int(moeda1),'Moeda(as) de R$ 1,00')
+        print(int(moeda050),'Moeda(as) de R$ 0,50')
+        print(int(moeda005),'Moeda(as) de R$ 0,05')
 
     else:  # Caso nenhuma das operações acima funcionem, retorna a ensagem de erro
         print('Erro')
