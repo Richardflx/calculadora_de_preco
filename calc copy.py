@@ -18,19 +18,21 @@ def CalculaTroco(compra, pagamento):  # Função para calcular o troco
         print(f'\nO valor do troco é de: R$ {troco}\n')  # Informa o valor do troco
         
         #  Divide os valores até onde é possível de acordo com os valores das notas do Real
-        resto = 0
-        for cedulas in 100,50,20,10,5,2,1,0.50,0.05:
-            nota = resto//cedulas  # Atribui as quantidades de notas realizando a divisão inteira com o operador "//"
-            resto = troco%cedulas  # Usa-se o operador "%" (módulo da divisão) que retorna o resto da divisão
-            troco = resto
-            if nota: #  Verifica se nota possui valor acima de 0, nesse caso retorna TRUE e imprime a mensagem
-                if cedulas < 2:
-                    print(f'{int(nota)} moeda(as) de R$ {cedulas:.2f}') 
-                else:
-                    print(f'{int(nota)} nota(as) de R$ {cedulas:.2f}')
 
-    else:  # Caso nenhuma das operações acima funcionem, retorna a mensagem de erro
+        resto1 = troco%100
+        resto2 = 0
+        for notas in 50,20,10,5,2,1,0.50,0.05:
+            nota = resto2//notas #  Atribui as quantidades de notas realizando a divisão inteira com o operador "//"
+            resto2 = resto1%notas # Usa-se o operador "%" (módulo da divisão) que retorna o resto da divisão
+            
+            if nota: #  Verifica se nota possui valor, nesse caso retorna TRUE e imprime a mensagem
+                print(f'{int(nota)} nota(as)/moeda(as) de R$ {str(notas).replace(".", ",")}') 
+
+
+
+    else:  # Caso nenhuma das operações acima funcionem, retorna a ensagem de erro
         print('Erro')
 
 #  Chama a função de calcular o troco passando os parâmetros de valor da compra e pagamento
+
 CalculaTroco(valor_compra, valor_pagamento)
